@@ -127,7 +127,8 @@
 
 				// Items.
 					if (settings.carousels.fadeIn) {
-						
+						console.log("Item Width");
+						console.log(itemWidth);
 						
 						$items.addClass('loading');
 
@@ -164,8 +165,12 @@
 				// Main.
 					$t._update = function() {
 						pos = 0;
-						rightLimit = (-1 * reelWidth) + carouselWidth;
+						rightLimit = (-1 * reelWidth) + $window.width() - 50;
 						leftLimit = 0;
+						console.log("********rightLimit");
+						console.log(rightLimit);
+						console.log("pos");
+						console.log(pos);
 						$t._updatePos();
 					};
 				
@@ -220,7 +225,9 @@
 				// Init.
 					$window.load(function() {
 						reelWidth = $reel[0].scrollWidth;
-						carouselWidth = $reel[0].offsetWidth;
+
+						console.log("Reel Width");
+						console.log(reelWidth);
 
 						skel.change(function() {
 				
